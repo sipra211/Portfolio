@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <body>
+        
+        <div id="about">
+            <div class="container">
+                <nav class="navbar">
+                    <p class="logo"></p>
+                    <ul id="sidemenu">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="portfolio.html">Portfolio</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <i class='bx bx-window-close' onclick="closemenu()"></i>
+                    </ul>
+                    <i class='bx bx-menu' onclick="openmenu()"></i>
+                 </nav>
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/2.jpg" alt="">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Seeking a beginner role to enhance and explore my technical knowledge gained at KIET. I am pursuing a B.Tech degree from KIET Group of Institution college and won the quiz challenge held at the campus. </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>HTML/CSS/JS</span><br>Designing Webpage</li>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>C/JAVA/Python</span><br>Problem Solving</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2022-Current</span><br>B.Tech in IT at KIET Group of Institutions</li>
+                                <li><span>2019-2022</span><br>Diploma in IT at GGPL</li>
+                                <li><span>2019</span><br>Intermediate at TSIC</li>
+                                <li><span>2017</span><br>High School at TSIC</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <script>
+            var tablinks=document.getElementsByClassName("tab-links");
+            var tabcontents=document.getElementsByClassName("tab-contents");
+            function opentab(tabname)
+            {
+                for(tablink of tablinks){
+                  tablink.classList.remove("active-link");
+                }
+                
+                for(tabcontent of tabcontents){
+                  tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+    </body>
+</html>
